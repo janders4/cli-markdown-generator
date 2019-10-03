@@ -1,0 +1,43 @@
+{
+  "name": "cli-markdown-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "bin": {
+    "advanced-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "npm run build && npm run global",
+    "build": "npm run clean:some && tsc -p",
+    "global": "npm i -g && advanced-cli",
+    "clean:all": "rm -rf ./node_modules ./package-lock.json ./lib ./docs",
+    "clean:some": "rm -rf ./lib ./docs",
+    "refresh": "npm run clean:all && npm install",
+    "tscov": "tscov --min-coverage 90",
+    "tscov:d": "tscov --details",
+    "publish-package": "npm run build && npm publish",
+    "docs": "typedoc --out docs ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "figlet": "^1.2.4",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
+    "inversify": "^5.0.1",
+    "kleur": "^3.0.3",
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@liftr/tscov": "^1.4.1",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^12.7.9",
+    "ts-node": "^8.4.1",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.3"
+  }
+}
